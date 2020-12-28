@@ -12,3 +12,9 @@ display(df.head())
 
 df.rename(columns={'시점':'date', '확진':'cases', '사망':'deaths'}, inplace=True)
 display(df.head())
+
+df['date'] = pd.to_datetime(df['date'])
+display(df.head())
+
+df = df.set_index('date')
+display(df.head())

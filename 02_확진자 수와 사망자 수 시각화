@@ -1,0 +1,11 @@
+# 확진자수
+plt.figure(figsize=(9,3))
+plt.plot(df.index, df['cases'], label='confirmed cases')
+plt.legend()
+plt.show()
+
+# 사망자수
+plt.figure(figsize=(9,3))
+plt.plot(df.index, df['deaths'], label='deaths')
+plt.legend()
+plt.show()

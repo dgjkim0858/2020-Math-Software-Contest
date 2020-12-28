@@ -1,0 +1,10 @@
+df_deaths = df[['deaths']]
+display(df_deaths[:3])
+
+model_deaths = ARIMA(df_deaths, order=(1,0,0))
+model_deaths_fit = model_deaths.fit()
+model_deaths_fit.plot_predict()
+plt.show()
+
+print(model_deaths_fit.forecast(steps=3))
+display(df_deaths.tail())

@@ -1,4 +1,4 @@
-# 2020-Math-Software-Contest
+# 2020 Math Software Contest
 [제주과고 대회] 파이썬을 활용한 코로나19 확진자 수와 사망자 수에 대한 통계적 분석
 
 <br>01_데이터 수집 및 가공<br>

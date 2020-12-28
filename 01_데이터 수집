@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from google.colab import drive
+
+drive.mount('/content/gdrive')
+
+# 데이터 출처: https://kosis.kr/covid/covid_index.do
+df=pd.read_csv('/content/gdrive/My Drive/data/covid19.csv', encoding='euc-kr')
+print(len(df))
+display(df.head())
+
+df.rename(columns={'시점':'date', '확진':'cases', '사망':'deaths'}, inplace=True)
+display(df.head())

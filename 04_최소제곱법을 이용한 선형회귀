@@ -1,0 +1,16 @@
+mean_x, mean_y = np.mean(df['cases']), np.mean(df['deaths'])
+
+xy = np.sum((df['cases'] - mean_x)*(df['deaths'] - mean_y))
+xx = np.sum((df['cases'] - mean_x)**2)
+
+a = xy/xx
+b = mean_y - a * mean_x
+
+y_pred = a*df['cases'] + b
+print('회귀식: y =', a, '* x +', b)
+
+plt.scatter(df['cases'], df['deaths'], s=10)
+plt.plot(df['cases'], y_pred, 'r')
+plt.xlabel('confirmed cases')
+plt.ylabel('deaths')
+plt.show()

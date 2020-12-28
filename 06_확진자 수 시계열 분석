@@ -1,0 +1,13 @@
+df_cases = df[['cases']]
+display(df_cases[:3])
+
+from statsmodels.tsa.arima_model import ARIMA
+
+model_cases = ARIMA(df_cases, order=(1,0,0))
+model_cases_fit = model_cases.fit()
+
+model_cases_fit.plot_predict()
+plt.show()
+
+print(model_cases_fit.forecast(steps=3))
+display(df_cases.tail())
